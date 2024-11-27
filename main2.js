@@ -79,3 +79,18 @@
 //     });
 // });
 // });
+
+let promise1=new Promise((resolve) => 
+    resolve(10));
+promise1
+    .then((result)=>{
+        console.log(result);
+        return result+5;
+    })
+    .then ((result)=>{
+        console.log(result);
+        return result*2;
+    })
+    .then((result)=>{
+        console.log(result);
+    });

@@ -20,7 +20,7 @@
 </body>
 </html> -->
 
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,18 +31,18 @@
 <body>
     <h1>UserData</h1>
     <div class="data">
-    <input type="text" id="name" placeholder="enter your name">
-    <input type="submit">
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="greet()">Done</button>
+    <h1 id="disp"></h1>
     </div>
 <script>
-    function greet(name){
-        console.log('hello',$(name));
-        setTimeout(()=>{
-            console.log("welcome"),5000
-        });
+    function greet(){
+        const name = document.getElementById("name").value;
+        setTimeout(() => {
+            document.getElementById("disp").textContent = name;
+        }, 5000); // Delay of 5 seconds
     }
-
 </script> 
-<script src="index.html"></script> 
+
 </body>
-</html>
+</html> -->
