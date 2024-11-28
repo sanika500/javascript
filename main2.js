@@ -80,17 +80,43 @@
 // });
 // });
 
-let promise1=new Promise((resolve) => 
-    resolve(10));
-promise1
-    .then((result)=>{
+// let promise1=new Promise((resolve) => 
+//     resolve(10));
+// promise1
+//     .then((result)=>{
+//         console.log(result);
+//         return result+5;
+//     })
+//     .then ((result)=>{
+//         console.log(result);
+//         return result*2;
+//     })
+//     .then((result)=>{
+//         console.log(result);
+//     });
+
+
+// const promise1= Promise.resolve(1)
+// const promise2= Promise.reject('error in promise 2');
+// const promise3= Promise.resolve(3);
+
+// Promise.all([promise1,promise2,promise3])
+//     .then(results=>{
+//         console.log(results);
+//     })
+//     .catch(error=>{
+//         console.log(error);
+//     });
+
+
+const promise1=Promise.resolve(1)
+const promise2=Promise.resolve(2)
+const promise3=Promise.resolve(3)
+
+Promise.all([promise1,promise2,promise3])
+    .then(result=>{
         console.log(result);
-        return result+5;
     })
-    .then ((result)=>{
-        console.log(result);
-        return result*2;
-    })
-    .then((result)=>{
-        console.log(result);
+    .catch(error=>{
+        console.log(error);
     });
