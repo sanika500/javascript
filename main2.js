@@ -109,14 +109,30 @@
 //     });
 
 
-const promise1=Promise.resolve(1)
-const promise2=Promise.resolve(2)
-const promise3=Promise.resolve(3)
+// const promise1=Promise.resolve(1)
+// const promise2=Promise.resolve(2)
+// const promise3=Promise.resolve(3)
 
-Promise.all([promise1,promise2,promise3])
-    .then(result=>{
-        console.log(result);
-    })
-    .catch(error=>{
-        console.log(error);
+// Promise.all([promise1,promise2,promise3])
+//     .then(result=>{
+//         console.log(result);
+//     })
+//     .catch(error=>{
+//         console.log(error);
+//     });
+
+
+function fetchData(){
+    return new Promise(resolve=>{
+        setTimeout(()=>{
+            resolve("Data fetched");
+        },2000);
     });
+}
+
+async function asyncFunction(){
+    console.log("Fetching Data...");
+    const result=await fetchData();
+    console.log(result);
+}
+asyncFunction();
